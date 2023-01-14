@@ -9,11 +9,13 @@ import { Course } from '../model/course';
 export class CardComponent {
   @Input() course: Course;
 
-  @Output() customEventClicked = new EventEmitter<Course>();
+  // @Output() customEventClicked = new EventEmitter<Course>();
+  @Output('customEventClicked') customEventEmitter = new EventEmitter<Course>();
 
   onCustomButtonClicked() {
     console.log('Card component - custom browser event clicked...');
 
-    this.customEventClicked.emit(this.course);
+    // this.customEventClicked.emit(this.course);
+    this.customEventEmitter.emit(this.course);
   }
 }

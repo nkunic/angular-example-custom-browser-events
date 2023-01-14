@@ -7,8 +7,14 @@
   ></app-card>
 </div>
 <div class="card">
-  <app-card [course]="rxjsCourse"></app-card>
+  <app-card
+    [course]="rxjsCourse"
+    (customEventClicked)="onCustomEventClicked($event)"
+  ></app-card>
 </div>
 <div class="card">
-  <app-card [course]="ngrxCourse"></app-card>
+  <app-card
+    [course]="ngrxCourse"
+    (customEventClicked)="onCustomEventClicked($event)"
+  ></app-card>
 </div>
