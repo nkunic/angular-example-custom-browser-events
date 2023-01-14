@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { COURSES } from '../db-data';
+import { Course } from './model/course';
 
 @Component({
   selector: 'my-app',
@@ -11,8 +12,10 @@ export class AppComponent {
   rxjsCourse = COURSES[1];
   ngrxCourse = COURSES[2];
 
-  onStandardCardClicked() {
-    console.log('App component - standard browser click event bubbled...');
+  onCustomEventClicked(course: Course) {
+    console.log(
+      'App component - custom browser click event bubbled...',
+      course
+    );
   }
-
 }

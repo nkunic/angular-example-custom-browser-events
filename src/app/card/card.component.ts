@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Course } from '../model/course';
 
 @Component({
@@ -9,7 +9,11 @@ import { Course } from '../model/course';
 export class CardComponent {
   @Input() course: Course;
 
-  onStandardButtonClicked() {
-    console.log('Card component - standard browser event clicked...');
+  @Output() customEventClicked = new EventEmitter<Course>();
+
+  onCustomButtonClicked() {
+    console.log('Card component - custom browser event clicked...');
+
+    this.customEventClicked.emit(this.course);
   }
 }
